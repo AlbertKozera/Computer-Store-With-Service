@@ -1,0 +1,41 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <title>Pracownicy</title>
+</h:head>
+<h:body>
+    <ui:composition template="/index.xhtml">
+        <ui:define name="Workers">
+            <h:outputStylesheet library="css" name="StyleAdminSite.css" />
+            <div id="content">
+                    <br/>
+                    <h1>PRACOWNICY:</h1>
+                    <h:form>
+                        <h:dataTable value="#{adminPracownicy.listOfmap_Pracownicy}" var="listaMap"  border="2" cellspacing="1" cellpadding="1" styleClass="TabelaAdminPracownicy"  headerClass="TabelaAdminPracownicy-header"
+                                     rowClasses="TabelaAdminPracownicy-odd-row,TabelaAdminPracownicy-even-row">
+                            <h:column><f:facet name = "header">Nr. pracownika</f:facet>#{listaMap.idPracownik}</h:column>
+                            <h:column><f:facet name = "header">Imię</f:facet>#{listaMap.Imie}</h:column>
+                            <h:column><f:facet name = "header">Nazwisko</f:facet>#{listaMap.Nazwisko}</h:column>
+                            <h:column><f:facet name = "header">Login</f:facet>#{listaMap.Login}</h:column>
+                            <h:column><f:facet name = "header">Hasło</f:facet>#{listaMap.Haslo}</h:column>
+                            <h:column><f:facet name = "header">Stanowisko</f:facet>#{listaMap.Stanowisko}</h:column>
+                            <h:column><f:facet name = "header">Pensja</f:facet>#{listaMap.Pensja}</h:column>
+                            <h:column><f:facet name = "header">Osoba id</f:facet>#{listaMap.Osoba_idOsoba}</h:column>
+                            <h:column><h:commandButton value="Zwolnij" action="#{adminPracownicy.deletePracownik(listaMap)}" style="color: black"></h:commandButton></h:column>
+                        </h:dataTable>
+                    </h:form>
+                    <h:form>
+                        <h:commandButton value="Dodaj pracownika" action="#{adminPracownicy.loadAddWorker()}" styleClass="PracownikBtn"/>
+                    </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

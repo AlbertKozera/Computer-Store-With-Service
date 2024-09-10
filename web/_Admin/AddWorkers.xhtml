@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Dodaj racownika</title>
+</h:head>
+<h:body>
+    <ui:composition template="/index.xhtml">
+        <ui:define name="Workers">
+            <h:outputStylesheet library="css" name="StyleAdminSite.css" />
+            <div class="FormularzAdmin">
+                <h:form>
+                    <h2>Dodaj Pracownika</h2>
+                    <h:inputText value="#{adminPracownicy.login}" styleClass="input" p:placeholder="Login" />
+                    <h:inputSecret value="#{adminPracownicy.haslo}" styleClass="input" p:placeholder="Hasło"/>
+                    <h:inputText value="#{adminPracownicy.imie}" styleClass="input" p:placeholder="Imię" />
+                    <h:inputText value="#{adminPracownicy.nazwisko}" styleClass="input" p:placeholder="Nazwisko" />
+                    <h:inputText value="#{adminPracownicy.pensja}" styleClass="input" p:placeholder="Pensja" />
+                    <h:commandButton value="Dodaj pracownika" action="#{adminPracownicy.addWorker()}" styleClass="DodajPracownikBtn"/>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

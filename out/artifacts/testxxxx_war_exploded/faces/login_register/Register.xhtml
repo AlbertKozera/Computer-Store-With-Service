@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://java.sun.com/jsf/composite"
+      xmlns:pt="http://java.sun.com/jsf/facelets" xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Sklep komputerowy</title>
+    <h:outputStylesheet library="css" name="StyleRegister.css" />
+</h:head>
+<body>
+    <div class="form-wrap">
+        <h:form>
+            <h1>Załóż konto</h1>
+            <h:inputText value="#{register.username}" styleClass="input" p:placeholder="Login" required="true">Login</h:inputText>
+            <h:inputSecret value="#{register.password}" styleClass="input" p:placeholder="Hasło" required="true"></h:inputSecret>
+            <h:inputText value="#{register.email}" styleClass="input" p:placeholder="E-mail" required="true">E-mail</h:inputText>
+            <h:inputText value="#{register.imie}" styleClass="input" p:placeholder="Imię" required="true">Imie</h:inputText>
+            <h:inputText value="#{register.nazwisko}" styleClass="input" p:placeholder="Nazwisko" required="true">Nazwisko</h:inputText>
+            <h:commandButton value="Załóż konto" id="register" action="#{register.register()}" styleClass="zarejestruj"/>
+        </h:form>
+    </div>
+</body>
+</html>

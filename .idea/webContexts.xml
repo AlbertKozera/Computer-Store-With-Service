@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/web/Login.xhtml" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/_User/ListaKoszykow.xhtml" value="file://$PROJECT_DIR$/web/_User" />
+        <entry key="file://$PROJECT_DIR$/web/faces/Employee.xhtml" value="file://$PROJECT_DIR$/web/faces" />
+        <entry key="file://$PROJECT_DIR$/web/faces/ofertaSklepu/oprogramowanie/Antywirusy.xhtml" value="file://$PROJECT_DIR$/web/faces/ofertaSklepu/oprogramowanie" />
+        <entry key="file://$PROJECT_DIR$/web/index.xhtml" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/tmp.xhtml" value="file://$PROJECT_DIR$/web" />
+      </map>
+    </option>
+  </component>
+</project>

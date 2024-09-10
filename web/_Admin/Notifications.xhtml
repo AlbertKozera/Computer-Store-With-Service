@@ -1,0 +1,45 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <title>Powiadomienia</title>
+</h:head>
+<h:body>
+    <ui:composition template="/index.xhtml">
+    <ui:define name="Notifications">
+        <h:outputStylesheet library="css" name="StyleAdminSite.css" />
+            <br/>
+            Liczba powiadomien: #{adminPowiadomienia.numberOfNotifications}
+            <br>Od:</br>
+            <h:dataTable value="#{adminPowiadomienia.getListaOsob()}" var="osoby" border="2" cellspacing="1" cellpadding="1" tyleClass="TabelaAdminPracownicy"  headerClass="TabelaAdminPracownicy-header"
+                         rowClasses="TabelaAdminPracownicy-odd-row,TabelaAdminPracownicy-even-row">
+                <h:column><f:facet name = "header"></f:facet>#{osoby.login}</h:column>
+                <h:column><f:facet name = "header"></f:facet>#{osoby.imie}</h:column>
+                <h:column><f:facet name = "header"></f:facet>#{osoby.nazwisko}</h:column>
+            </h:dataTable>
+            <h:form>
+            <br>Powiadomienie:</br>
+            <h:dataTable value="#{adminPowiadomienia.getListaPowiadomien()}" var="powiadomienia" border="2" cellspacing="1" cellpadding="1" tyleClass="TabelaAdminPracownicy"  headerClass="TabelaAdminPracownicy-header"
+                         rowClasses="TabelaAdminPracownicy-odd-row,TabelaAdminPracownicy-even-row">
+                <h:column><f:facet name = "header">Numer:</f:facet>#{powiadomienia.idPowiadomienia}</h:column>
+                <h:column><f:facet name = "header">Do:</f:facet>#{powiadomienia.idOsobaFk}</h:column>
+                <h:column><f:facet name = "header">Temat:</f:facet>#{powiadomienia.temat}</h:column>
+                <h:column><f:facet name = "header">Tresc:</f:facet>#{powiadomienia.tresc}</h:column>
+                <h:column><h:commandButton value="Usun powiadomienie" action="#{adminPowiadomienia.deleteNotification}" style="color: black"></h:commandButton></h:column>
+            </h:dataTable><br/><br/>
+            </h:form>
+            <h:form>
+                <h:commandButton value="Następne powiadomienie ➜" action="#{adminPowiadomienia.nextID}" styleClass="NastepnyBtn"/>
+                <h:commandButton value="Nowe powiadomienie + " action="#{adminPowiadomienia.NewNotification}" styleClass="NowePowiadomienieBtn"/>
+            </h:form>
+    </ui:define>
+</ui:composition>
+
+
+</h:body>
+</html>

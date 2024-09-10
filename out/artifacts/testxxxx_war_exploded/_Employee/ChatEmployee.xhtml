@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<ui:composition template="/index.xhtml">
+    <ui:define name="ChatEmployee">
+        <h:outputStylesheet library="css" name="StyleChat.css"/>
+        <div class="Produktycontent">
+            <h:form>
+                <h:dataTable value="#{chatEmployee.getChatList()}" var="tmp" styleClass="TabelaInformacje" border="2" cellspacing="1" cellpadding="1" headerClass="TabelaInformacje-header"
+                             rowClasses="TabelaInformacje-odd-row,TabelaInformacje-even-row" columnClasses="TabelaInformacje-odd-column, TabelaInformacje-even-column">
+                    <h:column><f:facet name = "header">Ja</f:facet>#{tmp.pracownik}</h:column>
+                    <h:column><f:facet name = "header">klient</f:facet>#{tmp.klient}</h:column>
+                </h:dataTable>
+                <h:inputText label="wprowadz" value="#{chatEmployee.text_employee}" styleClass="SzzukajText"/><h:commandButton value=" ✉️➠" action="#{chatEmployee.addText()}" styleClass="ZatwierdzBtn"/><br/>
+            </h:form>
+        </div>
+        <ui:insert name="ProductsInSelectedKoszyk"/>
+    </ui:define>
+</ui:composition>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:k="http://xmlns.jcp.org/jsf/passthrough">
+
+<head>
+    <title>Lista Koszyków</title>
+</head>
+<body>
+
+
+<ui:composition template="/index.xhtml">
+    <ui:define name="ListaKoszykow">
+        <h:outputStylesheet library="css" name="StyleKoszyki.css"/>
+        <div class="Produktycontent">
+            <h:form>
+                <h:dataTable id="ListaKoszykow" value="#{koszykZakupowy.listOfmap_KoszykZamowienia}" var="listaMap" styleClass="TabelaInformacje" border="2" cellspacing="1" cellpadding="1" headerClass="TabelaInformacje-header"
+                             rowClasses="TabelaInformacje-odd-row,TabelaInformacje-even-row" columnClasses="column1,column2,column3,column4,column5,column6,column7,column8,column9,column10">
+                    <h:column><f:facet name = "header">Ilość</f:facet>#{listaMap.Ilosc}</h:column>
+                    <h:column><f:facet name = "header">Cena</f:facet>#{listaMap.Cena_koncowa}</h:column>
+                    <h:column><f:facet name = "header">Rabat</f:facet>#{listaMap.Rabat}</h:column>
+                    <h:column><f:facet name = "header">Do zapłaty</f:facet>#{listaMap.Cena_rabat}</h:column>
+                    <h:column><f:facet name = "header">Status</f:facet>#{listaMap.Status}</h:column>
+                    <h:column><f:facet name = "header">💳</f:facet><h:commandButton value="użyj 💳" action="#{koszykZakupowy.getCurrentIdKoszykFromSelectedRow(listaMap)}" styleClass="WyswietlButton"/></h:column>
+                    <h:column><f:facet name = "header">📄</f:facet><h:commandButton value="wyświetl 📄" action="#{koszykZakupowy.takeCurrentObjectMap(listaMap)}" styleClass="WyswietlButton"/></h:column>
+                    <h:column><f:facet name = "header">📑</f:facet><h:commandButton value="edytuj 📑" action="#{koszykZakupowy.getIdKoszykFromSelectedRowToEdit(listaMap)}" styleClass="WyswietlButton"/></h:column>
+                    <h:column><f:facet name = "header">📝</f:facet><h:commandButton value="zrealizuj 📝" action="#{koszykZakupowy.openRealizacjaZamowienia(listaMap)}" styleClass="WyswietlButton"/></h:column>
+                    <h:column><f:facet name = "header">🗑</f:facet><h:commandButton value="usuń 🗑" action="#{koszykZakupowy.getCurrentIdKoszykDeleteFromSelectedRow(listaMap)}" styleClass="WyswietlButton"/></h:column>
+                </h:dataTable>
+                <h:inputText value="#{koszykZakupowy.nazwa_kodu_rabatowego}" styleClass="inputRabat" k:placeholder="kod rabatowy 💳"/><br/>
+                <h:commandButton value="Dodaj nowy koszyk" action="#{koszykZakupowy.addNewKoszyk()}" styleClass="button"/>
+            </h:form>
+        </div>
+        <ui:insert name="ProductsInSelectedKoszyk"/>
+    </ui:define>
+</ui:composition>
+
+
+</body>
+</html>

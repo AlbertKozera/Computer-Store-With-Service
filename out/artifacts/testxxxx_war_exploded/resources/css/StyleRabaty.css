@@ -1,0 +1,111 @@
+.TabelaRabaty {
+    position: absolute;
+    color: black;
+    top: 12%;
+    left: 2%;
+}
+
+.TabelaRabaty-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:5px;
+}
+
+.TabelaRabaty-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.TabelaRabaty-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+
+.DodajRabatBtn {
+    position: absolute;
+    top: 12%;
+    left: 24%;
+    width: 210px;
+    height: 30px;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    font-size: medium;
+    font-family: Arial;
+}
+
+.DodajRabatBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+.FormularzRabaty {
+    width: 320px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 23%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    text-align: center;
+    color: orangered;
+    font-weight: inherit;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 100%;
+    background: none;
+    border: 2px solid orangered;
+    border-radius: 3px;
+    padding: 6px 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: orangered;
+}
+
+.ZatwierdzRabatyBtn {
+    width: 100%;
+    height: 35px;
+    position: center;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+}
+
+.ZatwierdzRabatyBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+.PowrotBtn {
+    position: absolute;
+    top: 36%;
+    left: 490px;
+    width: 320px;
+    height: 35px;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+}
+
+.PowrotBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+::placeholder {
+    text-align: center;
+    color: orangered;
+}

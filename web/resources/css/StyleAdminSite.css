@@ -1,0 +1,170 @@
+
+
+.TabelaAdminZamowienia {
+    position: absolute;
+    color: black;
+}
+
+.TabelaAdminZamowienia-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:5px;
+}
+
+.TabelaAdminZamowienia-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.TabelaAdminZamowienian-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+
+.NastepnyBtn {
+    position: absolute;
+    top: 24%;
+    left: 83%;
+    width: 210px;
+    height: 30px;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    font-size: medium;
+    font-family: Arial;
+}
+
+.NastepnyBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+.PracownikBtn {
+    position: absolute;
+    top: 12%;
+    left: 83%;
+    width: 210px;
+    height: 30px;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    font-size: medium;
+    font-family: Arial;
+}
+
+.PracownikBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+h1 {
+    position: relative;
+    font-size: medium;
+    font-family: Arial;
+    color: orangered;
+    top: 10px;
+}
+
+.NowePowiadomienieBtn {
+    position: absolute;
+    top: 20%;
+    left: 83%;
+    width: 210px;
+    height: 30px;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    font-size: medium;
+    font-family: Arial;
+}
+
+.NowePowiadomienieBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+.TabelaAdminPracownicy {
+    position: relative;
+    color: black;
+}
+
+.TabelaAdminPracownicy-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:5px;
+}
+
+.TabelaAdminPracownicy-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.TabelaAdminPracownicy-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+
+.FormularzAdmin {
+    width: 320px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    text-align: center;
+    color: orangered;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+h3 {
+    position: relative;
+    left: 0%;
+    text-align: center;
+    color: orangered;
+    font-weight: normal;
+}
+
+.input {
+    width: 100%;
+    background: none;
+    border: 2px solid orangered;
+    border-radius: 3px;
+    padding: 6px 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: orangered;
+}
+
+.DodajPracownikBtn {
+    width: 100%;
+    height: 35px;
+    position: center;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+}
+
+.DodajPracownikBtn:hover {
+    background: red;
+    transition: .6s;
+}
+::placeholder {
+    text-align: center;
+    color: orangered;
+}

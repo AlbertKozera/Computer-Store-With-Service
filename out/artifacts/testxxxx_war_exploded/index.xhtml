@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://java.sun.com/jsf/html"
+      xmlns:g="http://primefaces.org/ui"
+      xmlns:k="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <title>Sklep komputerowy</title>
+    <h:outputStylesheet library="css" name="Style.css"/>
+</h:head>
+<h:body>
+    <div id="naglowek">
+        <a href="/index.xhtml">
+            <h:graphicImage id="logo" library="img" name="logo.jpg" height="75" width="200"></h:graphicImage>
+        </a>
+        <h:form rendered="#{logout.anyoneLoggedIn}" style="float: right; margin-top: 4px; margin-right: 3px">
+            Witaj <h:outputText value = "#{logout.username}"/>!
+        </h:form>
+        <h:form>
+            <h:inputText label="Username" value="#{oferta.wyszukaj}" styleClass="SzzukajText" k:placeholder="Wyszukaj produkt..." /><h:commandButton value="🔍" action="#{oferta.search()}" styleClass="ZatwierdzBtn"/>
+        </h:form>
+    </div>
+    <!-- -->
+    <!-- -->
+    <h:form rendered="#{!logout.anyoneLoggedIn}">
+        <!-- rozkład menu dla statusu LOG_OUT -->
+        <div class="menu">
+            <h:commandLink value="💻 Laptopy" action="#{oferta.laptopy()}" style="color: black"/>
+            <div class="Podzespoly">
+                <button class="PodzespolyBtn">🖥️ Podzespoły komputerowe ⇅
+                    <i class="PodzespolyKlasa"></i>
+                </button>
+                <div class="Podzespoly-content">
+                    <h:commandLink value="Procesory" action="#{oferta.procesory()}" style="color: black"/>
+                    <h:commandLink value="Karty graficzne" action="#{oferta.karty_graficzne()}" style="color: black"/>
+                    <h:commandLink value="Płyty główne" action="#{oferta.plyty_glowne()}" style="color: black"/>
+                    <h:commandLink value="Zasilacze" action="#{oferta.zasilacze()}" style="color: black"/>
+                    <h:commandLink value="Pamieci RAM" action="#{oferta.pamieci_ram()}" style="color: black"/>
+                    <h:commandLink value="Obudowy komputerowe" action="#{oferta.obudowy_komputerowe()}" style="color: black"/>
+                    <h:commandLink value="Chłodzenia procesora" action="#{oferta.chlodzenia_procesora()}" style="color: black"/>
+                    <h:commandLink value="Dyski Twarde" action="#{oferta.dyski_twarde()}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Oprogramowanie">
+                <button class="OprogramowanieBtn">💿 Oprogramowanie ⇅
+                    <i class="OprogramowanieKlasa"></i>
+                </button>
+                <div class="Oprogramowanie-content">
+                    <h:commandLink value="Antywirusy" action="#{oferta.antywirusy()}" style="color: black"/>
+                    <h:commandLink value="Systemy operacyjne" action="#{oferta.systemy_operacyjne}" style="color: black"/>
+                    <h:commandLink value="Programy biurowe" action="#{oferta.programy_biurowe}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Peryferyjne">
+                <button class="PeryferyjneBtn">🖱️ Peryferia ⇅
+                    <i class="PeryferyjneKlasa"></i>
+                </button>
+                <div class="Peryferyjne-content">
+                    <h:commandLink value="Drukarki" action="#{oferta.drukarki()}" style="color: black"/>
+                    <h:commandLink value="Klawiatury" action="#{oferta.klawiatury()}" style="color: black"/>
+                    <h:commandLink value="Myszki" action="#{oferta.myszki()}" style="color: black"/>
+                    <h:commandLink value="Monitory" action="#{oferta.monitory()}" style="color: black"/>
+                </div>
+            </div>
+            <div>
+                <h:commandLink value="Załóż konto" action="/faces/login_register/Register"
+                               style=" font-size: medium;font-weight: bold; color: black"/>
+            </div>
+            <div>
+                <h:commandLink value="Zaloguj się" action="/faces/login_register/Login.jsp"
+                               style=" font-size: medium;font-weight: bold; color: black"/>
+            </div>
+        </div>
+    </h:form>
+    <!-- -->
+    <!-- -->
+    <h:form rendered="#{logout.userLoggedIn}">
+        <!-- rozkład menu dla statusu LOG_IN_USER -->
+        <div class="menu">
+            <h:commandLink value="💻 Laptopy" action="#{oferta.laptopy()}" style="color: black"/>
+            <div class="Podzespoly">
+                <button class="PodzespolyBtn">🖥️ Podzespoły komputerowe ⇅
+                    <i class="PodzespolyKlasa"></i>
+                </button>
+                <div class="Podzespoly-content">
+                    <h:commandLink value="Procesory" action="#{oferta.procesory()}" style="color: black"/>
+                    <h:commandLink value="Karty graficzne" action="#{oferta.karty_graficzne()}" style="color: black"/>
+                    <h:commandLink value="Płyty główne" action="#{oferta.plyty_glowne()}" style="color: black"/>
+                    <h:commandLink value="Zasilacze" action="#{oferta.zasilacze()}" style="color: black"/>
+                    <h:commandLink value="Pamieci RAM" action="#{oferta.pamieci_ram()}" style="color: black"/>
+                    <h:commandLink value="Obudowy komputerowe" action="#{oferta.obudowy_komputerowe()}" style="color: black"/>
+                    <h:commandLink value="Chłodzenia procesora" action="#{oferta.chlodzenia_procesora()}" style="color: black"/>
+                    <h:commandLink value="Dyski Twarde" action="#{oferta.dyski_twarde()}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Oprogramowanie">
+                <button class="OprogramowanieBtn">💿 Oprogramowanie ⇅
+                    <i class="OprogramowanieKlasa"></i>
+                </button>
+                <div class="Oprogramowanie-content">
+                    <h:commandLink value="Antywirusy" action="#{oferta.antywirusy()}" style="color: black"/>
+                    <h:commandLink value="Systemy operacyjne" action="#{oferta.systemy_operacyjne}" style="color: black"/>
+                    <h:commandLink value="Programy biurowe" action="#{oferta.programy_biurowe}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Peryferyjne">
+                <button class="PeryferyjneBtn">🖱️ Peryferia ⇅
+                    <i class="PeryferyjneKlasa"></i>
+                </button>
+                <div class="Peryferyjne-content">
+                    <h:commandLink value="Drukarki" action="#{oferta.drukarki()}" style="color: black"/>
+                    <h:commandLink value="Klawiatury" action="#{oferta.klawiatury()}" style="color: black"/>
+                    <h:commandLink value="Myszki" action="#{oferta.myszki()}" style="color: black"/>
+                    <h:commandLink value="Monitory" action="#{oferta.monitory()}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Profil">
+                <button class="ProfilBtn">👤 Profil ⇅
+                    <i class="ProfilKlasa"></i>
+                </button>
+                <div class="Profil-content">
+                    <h:commandLink value="💱 Faktury" action="#{koszykZakupowy.openFaktury()}" style="color: black"/>
+                    <h:commandLink value="🔔 Powiadomienia" action="index" style="color: black"/>
+                    <h:commandLink value="⚙️Ustawienia" action="#{profil.openEdycjaPrfilu()}" style="color: black"/>
+                </div>
+            </div>
+            <h:commandLink value="💬 Chat z konsultantem" action="#{chatUser.loadChat()}" style="color: black"/>
+            <h:commandLink value="🛒" action="#{koszykZakupowy.openListaKoszykow()}" style="color: black">#{koszykZakupowy.refreshFinalPriceOnScreen()} zł</h:commandLink>
+            <div>
+                <h:commandLink value="Wyloguj się" action="#{logout.logout()}"
+                               style="float: right; font-size: medium;font-weight: bold; color: black"/>
+            </div>
+        </div>
+    </h:form>
+    <!-- -->
+    <!-- -->
+    <h:form rendered="#{logout.adminLoggedIn}">
+        <!-- rozkład menu dla statusu LOG_IN_ADMIN -->
+        <div class="menu">
+            <h:commandLink value="📰 Zamówienia" action="#{adminZamowienia.loadFiles}" style="color: black"/>
+            <div class="Produkty">
+                <button class="ProduktyBtn">📄 Produkty ⇅
+                    <i class="ProduktyKlasa"></i>
+                </button>
+                <div class="Produkty-content">
+                    <ul>
+                    <li><h:commandLink value="📑 Przegladaj produkty" action="#{adminProdukty.loadFiles}" style="color: black"/>
+                        <ul>
+                            <li><h:commandLink value="💻 Laptopy" action="#{oferta.laptopy()}" style="color: black"/></li>
+                            <li><h:commandLink value="🖥️ Podzespoły komputerowe ⇅" style="color: black"/>
+                                <ul>
+                                    <li><h:commandLink value="Procesory" action="#{oferta.procesory()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Karty graficzne" action="#{oferta.karty_graficzne()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Płyty główne" action="#{oferta.plyty_glowne()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Zasilacze" action="#{oferta.zasilacze()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Pamieci RAM" action="#{oferta.pamieci_ram()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Obudowy komputerowe" action="#{oferta.obudowy_komputerowe()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Chłodzenia procesora" action="#{oferta.chlodzenia_procesora()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Dyski Twarde" action="#{oferta.dyski_twarde()}" style="color: black"/></li>
+                                </ul>
+                            </li>
+                            <li><h:commandLink value="💿 Oprogramowanie ⇅" style="color: black"/>
+                                <ul>
+                                    <li><h:commandLink value="Antywirusy" action="#{oferta.antywirusy()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Systemy operacyjne" action="#{oferta.systemy_operacyjne}" style="color: black"/></li>
+                                    <li><h:commandLink value="Programy biurowe" action="#{oferta.programy_biurowe}" style="color: black"/></li>
+                                </ul>
+                            </li>
+                            <li><h:commandLink value="🖱️ Peryferia ⇅" style="color: black"/>
+                                <ul>
+                                    <li><h:commandLink value="Drukarki" action="#{oferta.drukarki()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Klawiatury" action="#{oferta.klawiatury()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Myszki" action="#{oferta.myszki()}" style="color: black"/></li>
+                                    <li><h:commandLink value="Monitory" action="#{oferta.monitory()}" style="color: black"/></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><h:commandLink value="⇶ Dodaj produkty" action="#{adminProdukty.loadFiles}"  style="color: black"/></li>
+                    </ul>
+                </div>
+            </div>
+            <h:commandLink value="👨🏽‍💼 Pracownicy" action ="#{adminPracownicy.openPracownicy()}" style="color: black"></h:commandLink>
+            <h:commandLink value="👥 Klienci" action ="#{adminKlienci.openKlienci()}" style="color: black"></h:commandLink>
+            <h:commandLink value="🔔 Powiadomienia" action ="#{adminPowiadomienia.loadFiles}" style="color: black"></h:commandLink>
+            <h:commandLink value="📊 Historia tranzakcji" action ="#{adminFaktury.openFaktury()}" style="color: black"></h:commandLink>
+            <div>
+                <h:commandLink value="Wyloguj się" action="#{logout.logout()}"
+                               style="float: right; font-size: medium;font-weight: bold; color: black"/>
+            </div>
+        </div>
+    </h:form>
+    <!-- -->
+    <!-- -->
+    <h:form rendered="#{logout.employeeLoggedIn}">
+        <!-- rozkład menu dla statusu LOG_IN_EMPLOYEE -->
+        <div class="menu">
+            <h:commandLink value="💻 Laptopy" action="#{oferta.laptopy()}" style="color: black"/>
+            <div class="Podzespoly">
+                <button class="PodzespolyBtn">🖥️ Podzespoły komputerowe ⇅
+                    <i class="PodzespolyKlasa"></i>
+                </button>
+                <div class="Podzespoly-content">
+                    <h:commandLink value="Procesory" action="#{oferta.procesory()}" style="color: black"/>
+                    <h:commandLink value="Karty graficzne" action="#{oferta.karty_graficzne()}" style="color: black"/>
+                    <h:commandLink value="Płyty główne" action="#{oferta.plyty_glowne()}" style="color: black"/>
+                    <h:commandLink value="Zasilacze" action="#{oferta.zasilacze()}" style="color: black"/>
+                    <h:commandLink value="Pamieci RAM" action="#{oferta.pamieci_ram()}" style="color: black"/>
+                    <h:commandLink value="Obudowy komputerowe" action="#{oferta.obudowy_komputerowe()}" style="color: black"/>
+                    <h:commandLink value="Chłodzenia procesora" action="#{oferta.chlodzenia_procesora()}" style="color: black"/>
+                    <h:commandLink value="Dyski Twarde" action="#{oferta.dyski_twarde()}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Oprogramowanie">
+                <button class="OprogramowanieBtn">💿 Oprogramowanie ⇅
+                    <i class="OprogramowanieKlasa"></i>
+                </button>
+                <div class="Oprogramowanie-content">
+                    <h:commandLink value="Antywirusy" action="#{oferta.antywirusy()}" style="color: black"/>
+                    <h:commandLink value="Systemy operacyjne" action="#{oferta.systemy_operacyjne}" style="color: black"/>
+                    <h:commandLink value="Programy biurowe" action="#{oferta.programy_biurowe}" style="color: black"/>
+                </div>
+            </div>
+            <div class="Peryferyjne">
+                <button class="PeryferyjneBtn">🖱️ Peryferia ⇅
+                    <i class="PeryferyjneKlasa"></i>
+                </button>
+                <div class="Peryferyjne-content">
+                    <h:commandLink value="Drukarki" action="#{oferta.drukarki()}" style="color: black"/>
+                    <h:commandLink value="Klawiatury" action="#{oferta.klawiatury()}" style="color: black"/>
+                    <h:commandLink value="Myszki" action="#{oferta.myszki()}" style="color: black"/>
+                    <h:commandLink value="Monitory" action="#{oferta.monitory()}" style="color: black"/>
+                </div>
+            </div>
+            <h:commandLink value="💬 Chat z klientem" action="#{chatEmployee.loadChat()}" style="color: black"/>
+            <h:commandLink value="💳 Kody rabatowe" action="#{kodRabatowy.loadKodyRabatowe()}" style="color: black"/>
+            <h:commandLink value="Wyloguj się" action="#{logout.logout()}"
+                           style="float: right; font-size: medium;font-weight: bold; color: black"/>
+        </div>
+    </h:form>
+    <!-- -->
+    <!-- -->
+    <div id="content">
+        <!--Strona Usera-->
+        <ui:insert name="Procesory"/>
+        <ui:insert name="Karty_Graficzne"/>
+        <ui:insert name="Plyty_Glowne"/>
+        <ui:insert name="Zasilacze"/>
+        <ui:insert name="Pamieci_RAM"/>
+        <ui:insert name="Obudowy_Komputerowe"/>
+        <ui:insert name="Chlodzenia_Procesora"/>
+        <ui:insert name="Dyski_Twarde"/>
+        <ui:insert name="Laptopy"/>
+        <ui:insert name="Antywirusy"/>
+        <ui:insert name="Operacyjne"/>
+        <ui:insert name="Biurowe"/>
+        <ui:insert name="Drukarki"/>
+        <ui:insert name="Klawiatury"/>
+        <ui:insert name="Monitory"/>
+        <ui:insert name="Myszki"/>
+        <ui:insert name="ListaKoszykow"/>
+        <ui:insert name="ProductsInSelectedKoszyk"/>
+        <ui:insert name="RealizacjaZamowienia"/>
+        <ui:insert name="ChatUser"/>
+        <ui:insert name="Faktury"/>
+
+        <!--Strona Admina-->
+        <ui:insert name="Clients"/>
+        <ui:insert name="EditClients"/>
+        <ui:insert name="NewNotification"/>
+        <ui:insert name="Notifications"/>
+        <ui:insert name="Order"/>
+        <ui:insert name="Products"/>
+        <ui:insert name="Workers"/>
+        <ui:insert name="AddWorker"/>
+        <ui:insert name="FakturyAdmin"/>
+
+        <!--Strona Pracownika-->
+        <ui:insert name="ChatEmployee"/>
+        <ui:insert name="KodRabatowy"/>
+        <ui:insert name="dodajKodRabatowy"/>
+        <ui:insert name="ProfilUser"/>
+
+
+    </div>
+</h:body>
+</html>

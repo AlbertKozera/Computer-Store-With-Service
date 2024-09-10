@@ -1,0 +1,598 @@
+body {
+    position: absolute;
+    background-color: silver;
+    top: -10px;
+    width: 1300px;
+    height: 1200px;
+    left: 7%;
+}
+
+#naglowek{
+    background: white;
+    width: 1300px;
+    height: 75px;
+}
+
+#login {
+    float: right;
+}
+
+#logo {
+    float: left;
+}
+
+#menu {
+    background: orangered;
+    width: 1300px;
+    height: 50px;
+}
+
+#content {
+    background: white;
+    width: 1300px;
+    height: 2300px;
+}
+
+#stopka {
+    background: orangered;
+    width: 1300px;
+    height: 25px;
+}
+
+.menu {
+    overflow: hidden;
+    background-color: orangered;
+    font-family: Arial;
+}
+
+.menu a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.Podzespoly {
+    float: left;
+    overflow: hidden;
+}
+
+.Podzespoly .PodzespolyBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.menu a:hover, .Podzespoly:hover .PodzespolyBtn {
+    background-color: red;
+    transition: .6s;
+}
+
+.Podzespoly-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.Podzespoly-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.Podzespoly-content a:hover {
+    background-color: #ddd;
+    transition: .6s;
+}
+
+.Podzespoly:hover .Podzespoly-content {
+    display: block;
+    transition: .6s;
+}
+
+.Oprogramowanie {
+    float: left;
+    overflow: hidden;
+}
+
+.Oprogramowanie .OprogramowanieBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.menu a:hover, .Oprogramowanie:hover .OprogramowanieBtn {
+    background-color: red;
+    transition: .6s;
+}
+
+.Oprogramowanie-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.Oprogramowanie-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.Oprogramowanie-content a:hover {
+    background-color: #ddd;
+    transition: .6s;
+}
+
+.Oprogramowanie:hover .Oprogramowanie-content {
+    display: block;
+    transition: .6s;
+}
+
+.Peryferyjne {
+    float: left;
+    overflow: hidden;
+}
+
+.Peryferyjne .PeryferyjneBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.menu a:hover, .Peryferyjne:hover .PeryferyjneBtn {
+    background-color: red;
+    transition: .6s;
+}
+
+.Peryferyjne-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.Peryferyjne-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.Peryferyjne-content a:hover {
+    background-color: red;
+    transition: .6s;
+}
+
+.Peryferyjne:hover .Peryferyjne-content {
+    display: block;
+    transition: .6s;
+}
+
+
+/*C________________s____s-________________________________________________*/
+
+
+
+
+.Produktycontent {
+    position: relative;
+    width: 1300px;
+    height: 300px;
+}
+
+.Produktycontent .ProduktZdjecie {
+    position: relative;
+    height: 200px;
+    width: 245px;
+    left: 10px;
+    top: 25px;
+}
+
+.Produktycontent h1 {
+    position: relative;
+    top: -200px;
+    left: 20px;
+    font-size: medium;
+    font-family: Arial;
+    color: orangered;
+}
+
+.Produktycontent h2 {
+    position: relative;
+    top: -130px;
+    left: 20px;
+    font-size: medium;
+    font-family: Arial;
+    color: orangered;
+}
+
+h3 {
+    position: relative;
+    font-size: medium;
+    font-family: Arial;
+    color: orangered;
+    top: 15px;
+    left: 450px;
+}
+
+.Produktycontent .TabelaInformacje {
+    position: absolute;
+    top: -180px;
+    left: 20px;
+    color: black;
+    width: 850px;
+    height: 25px;
+}
+
+.Produktycontent .TabelaInformacje-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:5px;
+}
+
+.Produktycontent .TabelaInformacje-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.Produktycontent .TabelaInformacje-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+
+.Produktycontent .TabelaAtrybuty {
+    position: absolute;
+    top: -80px;
+    left: 20px;
+    color: black;
+    width: 1025px;
+    height: 75px;
+}
+
+.Produktycontent .TabelaAtrybuty-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:5px;
+}
+
+.Produktycontent .TabelaAtrybuty-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.Produktycontent .TabelaAtrybuty-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+
+.Produktycontent .DodajBtn {
+    position: relative;
+    background: orangered;
+    cursor: pointer;
+    border: 0;
+    color: black;
+    float: right;
+    top:  -260px;
+}
+
+.Produktycontent .DodajBtn:hover {
+    background: lawngreen;
+    transition: .6s;
+}
+
+
+
+.ZatwierdzBtn {
+    position: relative;
+    top: 20px;
+    left: 324px;
+    height: 34px;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+}
+
+.ZatwierdzBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+.Produktycontent .NastepnyBtn {
+    position: relative;
+    background: orangered;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    float: right;
+    top: -280px;
+    font-size: xx-large;
+}
+
+.Produktycontent .NastepnyBtn:hover {
+    background: red;
+    transition: .6s;
+}
+
+.SzzukajText {
+    position: relative;
+    top: 20px;
+    left: 325px;
+    background: none;
+    border: 2px solid orangered;
+    border-radius: 3px;
+    padding: 6px 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: orangered;
+}
+
+::placeholder {
+    color: orangered;
+}
+
+.Produktycontent .Informacje {
+    position: relative;
+    top: 10px;
+    left: 250px;
+    width: 1025px;
+}
+
+
+.Profil {
+    float: left;
+    overflow: hidden;
+}
+
+.Profil .ProfilBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.menu a:hover, .Profil:hover .ProfilBtn {
+    background-color: red;
+    transition: .6s;
+}
+
+.Profil-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.Profil-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.Profil-content a:hover {
+    background-color: red;
+    transition: .6s;
+}
+
+.Profil:hover .Profil-content {
+    display: block;
+    transition: .6s;
+}
+
+
+
+.Produkty {
+    float: left;
+    overflow: hidden;
+}
+.Produkty .ProduktyBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.menu a:hover, .Produkty:hover .ProduktyBtn {
+    background-color: red;
+    transition: .6s;
+}
+.Produkty-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    z-index: 1;
+}
+.Produkty-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.Produkty-content a:hover {
+    background-color: red;
+    transition: .6s;
+}
+.Produkty:hover .Produkty-content {
+    display: block;
+    transition: .6s;
+}
+
+ul {
+    text-align: left;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    display: block;
+    position: relative;
+    padding: 12px 16px;
+    background: #f9f9f9;
+}
+
+ul li a{
+    text-decoration: none;
+    padding: 12px 16px;
+    color: white;
+    font-size: 18px;
+}
+
+ul li:hover {
+    background: red;
+    color: #f9f9f9;
+    transition: .3s;
+}
+
+ul li ul {
+    padding: 0;
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    left: 225px;
+    top: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    z-index: 1;
+    width: 230px;
+}
+
+ul li ul li {
+    background: #f9f9f9;
+    display: block;
+}
+
+ul li ul li:hover {
+    background: red;
+    transition: .3s;
+}
+
+ul li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul ul ul li {
+    display: none;
+}
+
+ul ul li:hover li {
+    display: block;
+}
+
+ul ul ul {
+    position: absolute;
+    left: 230px;
+    top: 0;
+    z-index: 1;
+}
+
+
+
+
+
+.Serwis {
+    float: left;
+    overflow: hidden;
+}
+
+.Serwis .SerwisBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.menu a:hover, .Serwis:hover .SerwisBtn {
+    background-color: red;
+    transition: .6s;
+}
+
+.Serwis-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.Serwis-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.Serwis-content a:hover {
+    background-color: #ddd;
+    transition: .6s;
+}
+
+.Serwis:hover .Serwis-content {
+    display: block;
+    transition: .6s;
+}

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Edytuj Klienta</title>
+</h:head>
+<h:body>
+    <ui:composition template="/index.xhtml">
+        <ui:define name="Notifications">
+            <h:outputStylesheet library="css" name="StyleAdminSite.css" />
+            <br/>
+            <div class="form-wrap">
+                <h:dataTable value="#{adminKlienci.listOfMap_SelectedKlient}" var="osoba"  border="2" cellspacing="1" cellpadding="1" styleClass="TabelaAdminPracownicy"  headerClass="TabelaAdminPracownicy-header"
+                             rowClasses="TabelaAdminPracownicy-odd-row,TabelaAdminPracownicy-even-row">
+                    <h:column><f:facet name = "header">Nr. klienta</f:facet>#{osoba.idKlientSelected}</h:column>
+                    <h:column><f:facet name = "header">Imie</f:facet>#{osoba.ImieSelected}</h:column>
+                    <h:column><f:facet name = "header">Nazwisko</f:facet>#{osoba.NazwiskoSelected}</h:column>
+                    <h:column><f:facet name = "header">Login</f:facet>#{osoba.LoginSelected}</h:column>
+                    <h:column><f:facet name = "header">Haslo</f:facet>#{osoba.HasloSelected}</h:column>
+                    <h:column><f:facet name = "header">Email</f:facet>#{osoba.EmailSelected}</h:column>
+                </h:dataTable>
+            <div class="FormularzAdmin">
+                <h:form>
+                    <h2>Wypelnij dane poniżej: </h2>
+                    <h:inputText value = "#{adminKlienci.imieKl}" size="20" styleClass="input" p:placeholder="Imię" required="true"/>
+                    <h:inputText value = "#{adminKlienci.nazwiskoKl}" size="20" styleClass="input" p:placeholder="Nazwisko" required="true"/>
+                    <h:inputText value = "#{adminKlienci.loginKl}" size="20" styleClass="input" p:placeholder="Login" required="true"/>
+                    <h:inputText value = "#{adminKlienci.hasloKl}" size="20" styleClass="input" p:placeholder="Hasło" required="true"/>
+                    <h:inputText value = "#{adminKlienci.emailKl}" size="20" styleClass="input" p:placeholder="E-Mail" required="true"/>
+                    <h:commandButton value="Zapisz" action="#{adminKlienci.SaveClient()}" styleClass="DodajPracownikBtn" ></h:commandButton>
+                </h:form>
+            </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

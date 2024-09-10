@@ -1,0 +1,54 @@
+.Produktycontent .TabelaInformacje {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    color: black;
+    width: 850px;
+    height: 25px;
+}
+
+.Produktycontent .TabelaInformacje-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:5px;
+}
+
+.Produktycontent .TabelaInformacje-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.Produktycontent .TabelaInformacje-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+
+.TabelaInformacje-odd-column {
+    background: dodgerblue;
+}
+
+.Produktycontent .SzzukajText {
+    position: absolute;
+    width: 300px;
+    top: 20%;
+    left: 70%;
+}
+
+.Produktycontent .ZatwierdzBtn {
+    position: absolute;
+    background: dodgerblue;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    height: 34px;
+    top: 20%;
+    left: 90%;
+}
+
+.Produktycontent .ZatwierdzBtn:hover {
+    background: red;
+    transition: .6s;
+}

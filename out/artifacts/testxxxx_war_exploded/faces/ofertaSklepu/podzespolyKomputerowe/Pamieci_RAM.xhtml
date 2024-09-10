@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Sklep komputerowy</title>
+</h:head>
+<h:body>
+    <ui:composition template="/index.xhtml">
+        <ui:define name="Pamieci_RAM">
+            <h:outputStylesheet library="css" name="Style.css"/>
+                <div class="Produktycontent">
+                    <div class="ProduktZdjecie">
+                        <h:graphicImage name="#{oferta.getImg_path()}" style="height: 200px; width: 200px;"/>
+                    </div>
+                    <div class="Informacje">
+                        <h1>Informacje podstawowe:</h1>
+                        <h:dataTable value="#{oferta.getProduktyList()}" var="produkty" styleClass="TabelaInformacje" border="2" cellspacing="1" cellpadding="1" headerClass="TabelaInformacje-header"
+                                     rowClasses="TabelaInformacje-odd-row,TabelaInformacje-even-row">
+                            <h:column><f:facet name = "header">Kategoria</f:facet>#{produkty.kategoria}</h:column>
+                            <h:column><f:facet name = "header">Nazwa</f:facet>#{produkty.nazwa}</h:column>
+                            <h:column><f:facet name = "header">Cena</f:facet>#{produkty.cena}</h:column>
+                            <h:column><f:facet name = "header">Producent</f:facet>#{produkty.producent}</h:column>
+                        </h:dataTable>
+
+                        <h2>Specyfikacja:</h2>
+                        <h:dataTable value="#{oferta.getAtrybutyList()}" var="atrybuty" styleClass="TabelaAtrybuty" border="2" cellspacing="1" cellpadding="1" headerClass="TabelaAtrybuty-header"
+                                     rowClasses="TabelaAtrybuty-odd-row,TabelaAtrybuty-even-row">
+                            <h:column><f:facet name = "header">Pojemność</f:facet>#{atrybuty.iloscRamGb}</h:column>
+                            <h:column><f:facet name = "header">Częstotliwość</f:facet>#{atrybuty.czestotliwoscMhz}</h:column>
+                            <h:column><f:facet name = "header">Opóźnienie</f:facet>#{atrybuty.opoznienie}</h:column>
+                            <h:column><f:facet name = "header">Chłodzenie</f:facet>#{atrybuty.chlodzenie}</h:column>
+                            <h:column><f:facet name = "header">Napięcie</f:facet>#{atrybuty.napiecie}</h:column>
+                            <h:column><f:facet name = "header">Rodzaj</f:facet>#{atrybuty.rodzaj}</h:column>
+                            <h:column><f:facet name = "header">Liczba modułów</f:facet>#{atrybuty.liczbaModulow}</h:column>
+                        </h:dataTable>
+                        <h:form rendered="#{logout.userLoggedIn}">
+                            <h:commandButton value="Dodaj do koszyka" action="#{koszykZakupowy.addProductsTo_KoszykProdukty()}" styleClass="DodajBtn"/>
+                        </h:form>
+                        <h:form>
+                            <br/>
+                            <br/><br/>
+                            <h:commandButton value="➜" action="#{oferta.nextI()}" styleClass="NastepnyBtn"/><br/><br/>
+                        </h:form>
+                    </div>
+                </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<ui:composition template="/index.xhtml">
+    <ui:define name="KodRabatowy">
+        <h:outputStylesheet library="css" name="StyleRabaty.css"/>
+            <h:form>
+                <h:dataTable value="#{kodRabatowy.listOfMap_KodyRabatowe}" var="listaMap" border="2" cellspacing="1" cellpadding="1" styleClass="TabelaRabaty"  headerClass="TabelaRabaty-header"
+                             rowClasses="TabelaRabaty-odd-row,TabelaRabaty-even-row">
+                    <h:column><f:facet name = "header">Nazwa</f:facet>#{listaMap.nazwa}</h:column>
+                    <h:column><f:facet name = "header">Rabat</f:facet>#{listaMap.rabat_procent}</h:column>
+                    <h:column><f:facet name = "header">Mnożnik</f:facet>#{listaMap.rabat}</h:column>
+                    <h:column><f:facet name = "header">🗑</f:facet><h:commandButton value="usuń 🗑" action="#{kodRabatowy.usunKodRabatowy(listaMap)}" /></h:column>
+                </h:dataTable>
+                <h:commandButton value="Dodaj kod rabatowy ➕" action="#{kodRabatowy.load_dodajKodyRabatowe()}" styleClass="DodajRabatBtn"/>
+            </h:form>
+        <ui:insert name="ProductsInSelectedKoszyk"/>
+    </ui:define>
+</ui:composition>
+
+</body>
+</html>

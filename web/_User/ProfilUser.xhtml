@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<f:view>
+    <title>Klienci</title>
+</f:view>
+<h:body>
+    <ui:composition template="/index.xhtml">
+        <ui:define name="ProfilUser">
+            <h:outputStylesheet library="css" name="StyleUserProfile.css" />
+            <br/>
+                <h:dataTable value="#{profil.getlistaProfil()}" var="osoba"  border="2" cellspacing="1" cellpadding="1" styleClass="TabelaProfilKlienta"  headerClass="TabelaProfilKlienta-header"
+                             rowClasses="TabelaProfilKlienta-odd-row,TabelaProfilKlienta-even-row">
+                    <h:column><f:facet name = "header">Imie</f:facet>#{osoba.imie}</h:column>
+                    <h:column><f:facet name = "header">Nazwisko</f:facet>#{osoba.nazwisko}</h:column>
+                    <h:column><f:facet name = "header">Login</f:facet>#{osoba.login}</h:column>
+                    <h:column><f:facet name = "header">Haslo</f:facet>#{osoba.haslo}</h:column>
+                    <h:column><f:facet name = "header">Email</f:facet>#{osoba.email}</h:column>
+                    <h:column><f:facet name = "header">Miasto</f:facet>#{osoba.miasto}</h:column>
+                    <h:column><f:facet name = "header">Ulica</f:facet>#{osoba.ulica}</h:column>
+                    <h:column><f:facet name = "header">Nr. domu</f:facet>#{osoba.nrDomu}</h:column>
+                    <h:column><f:facet name = "header">Kod pocztowy</f:facet>#{osoba.kodPocztowy}</h:column>
+                </h:dataTable>
+                <div class="FormularzProfilUser">
+                    <h:form>
+                        <h2>Wypelnij dane poniżej: </h2>
+                        <h:inputText value = "#{profil.imie}" size="20" styleClass="input" p:placeholder="Imię" required="true"/>
+                        <h:inputText value = "#{profil.nazwisko}" size="20" styleClass="input" p:placeholder="Nazwisko" required="true"/>
+                        <h:inputText value = "#{profil.login}" size="20" styleClass="input" p:placeholder="Login" required="true"/>
+                        <h:inputText value = "#{profil.haslo}" size="20" styleClass="input" p:placeholder="Hasło" required="true"/>
+                        <h:inputText value = "#{profil.email}" size="20" styleClass="input" p:placeholder="E-Mail" required="true"/>
+                        <h:inputText value = "#{profil.miasto}" size="20" styleClass="input" p:placeholder="Miasto" required="true"/>
+                        <h:inputText value = "#{profil.ulica}" size="20" styleClass="input" p:placeholder="Ulica" required="true"/>
+                        <h:inputText value = "#{profil.nrDomu}" size="20" styleClass="input" p:placeholder="Nr. domu" required="true"/>
+                        <h:inputText value = "#{profil.kodPocztowy}" size="20" styleClass="input" p:placeholder="Kod pocztowy" required="true"/>
+                        <h:commandButton value="Zapisz" action="#{profil.SaveClient()}" styleClass="AktualizujProfilUserBtn" ></h:commandButton>
+                    </h:form>
+                </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

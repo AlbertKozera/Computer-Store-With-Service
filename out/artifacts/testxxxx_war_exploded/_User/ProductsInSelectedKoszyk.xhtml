@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Koszyk</title>
+</h:head>
+<h:body>
+
+    <ui:composition template="/index.xhtml">
+        <ui:define name="ProductsInSelectedKoszyk">
+            <h:outputStylesheet library="css" name="StyleKoszyki.css"/>
+            <div class="Produktycontent">
+                <h:form>
+                    <h:dataTable id="ProduktyWkoszyku" value="#{koszykZakupowy.listOfmap_KoszykProdukty}" var="listaMap2" styleClass="TabelaInformacje" border="2" cellspacing="1" cellpadding="1" headerClass="TabelaInformacje-header"
+                                 rowClasses="TabelaInformacje-odd-row,TabelaInformacje-even-row">
+                        <h:column><f:facet name = "header">Nazwa</f:facet>#{listaMap2.nazwa}</h:column>
+                        <h:column><f:facet name = "header">Producent</f:facet>#{listaMap2.producent}</h:column>
+                        <h:column><f:facet name = "header">Cena</f:facet>#{listaMap2.cena}</h:column>
+                        <h:column><f:facet name = "header">Usuń</f:facet><h:commandLink value="usuń 🗑" action="#{koszykZakupowy.getCurrentIdKoszykFKFromSelectedRow(listaMap2)}"/></h:column>
+                    </h:dataTable>
+                    <br/>
+                    <h:commandButton value="Powrót do listy koszyków" action="#{koszykZakupowy.openListaKoszykow()}" styleClass="button1"/>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>
+

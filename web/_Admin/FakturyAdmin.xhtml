@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<ui:composition template="/index.xhtml">
+    <ui:define name="FakturyAdmin">
+        <h:outputStylesheet library="css" name="StyleKoszyki.css"/>
+        <div class="Produktycontent">
+            <h:form>
+                <h:dataTable value="#{adminFaktury.listOfmap_Faktury}" var="listaMap" styleClass="TabelaInformacje" border="2" cellspacing="1" cellpadding="1" headerClass="TabelaInformacje-header"
+                             rowClasses="TabelaInformacje-odd-row,TabelaInformacje-even-row" columnClasses="TabelaInformacje-odd-column, TabelaInformacje-even-column">
+                    <h:column><f:facet name = "header">ID Klienta</f:facet>#{listaMap.idKlient_FK}</h:column>
+                    <h:column><f:facet name = "header">Nazwa</f:facet>#{listaMap.Nazwa}</h:column>
+                    <h:column><f:facet name = "header">Cena</f:facet>#{listaMap.Cena}</h:column>
+                    <h:column><f:facet name = "header">Ilość</f:facet>#{listaMap.Ilosc_produktow}</h:column>
+                    <h:column><f:facet name = "header">Data Tranzakcji</f:facet>#{listaMap.Data_sprzedazy}</h:column>
+                    <h:column><f:facet name = "header">Imie</f:facet>#{listaMap.Imie}</h:column>
+                    <h:column><f:facet name = "header">Nazwisko</f:facet>#{listaMap.Nazwisko}</h:column>
+                    <h:column><f:facet name = "header">Miasto</f:facet>#{listaMap.Miasto}</h:column>
+                    <h:column><f:facet name = "header">Ulica</f:facet>#{listaMap.Ulica}</h:column>
+                    <h:column><f:facet name = "header">Numer domu</f:facet>#{listaMap.NrDomu}</h:column>
+                    <h:column><f:facet name = "header">Kod pocztowy</f:facet>#{listaMap.KodPocztowy}</h:column>
+                    <h:column><f:facet name = "header">📓</f:facet><h:commandLink value="więcej szczegółów 📓" styleClass="WyswietlButton"/></h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+        <ui:insert name="ProductsInSelectedKoszyk"/>
+    </ui:define>
+</ui:composition>
+
+</body>
+</html>
